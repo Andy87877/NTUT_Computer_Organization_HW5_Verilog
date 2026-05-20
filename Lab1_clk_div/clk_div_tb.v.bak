@@ -1,0 +1,28 @@
+module clk_div_tb;
+	reg clk_in;
+	reg reset;
+	reg enable;
+	wire clk_out;
+	
+	// Instantiate the Design Under Test (DUT)
+	clk_div INST1(
+		.clk_in(clk_in),
+		.enable(enable),
+		.reset(reset),
+		.clk_out(clk_out)
+	);
+	
+	// Generate clock: toggle every 1 time unit
+	initial clk_in = 1'b0;
+	always #1 clk_in = ~clk_in;
+	
+	// Test sequence
+	initial begin
+		reset = 1'b1;    // Apply reset
+      enable = 1'b1;   // Enable counter
+      #2 reset = 1'b0; // Release reset
+      #180 reset = 1'b1; // Apply reset again
+      #2 reset = 1'b0; // Release reset
+      #20 $finish;     // End simulation
+	end
+endmodule

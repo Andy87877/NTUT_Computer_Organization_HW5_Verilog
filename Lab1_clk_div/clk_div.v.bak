@@ -1,0 +1,41 @@
+module clk_div_tb;
+
+    reg clk_in;
+    reg reset;
+    reg enable;
+    wire clk_out;
+
+    // 實例化被測元件 (UUT)，名稱與講義一致使用 INST1
+    clk_div INST1 (
+        .clk_in(clk_in),
+        .enable(enable),
+        .reset(reset),
+        .clk_out(clk_out)
+    );
+
+    // 時脈初始化
+    initial begin
+        clk_in = 1'b0;
+    end
+
+    // 時脈產生：每 1 個時間單位反轉一次（週期為 2 單位）
+    always begin
+        #1 clk_in = ~clk_in;
+    end
+
+    // 激勵訊號控制邏輯
+    initial begin
+        reset = 1'b1;   // 一開始重置拉高
+        enable = 1'b1;  // 同時工作致能拉高
+        #2;             // 維持 2 個時間單位
+        
+        reset = 1'b0;   // 釋放重置，電路開始正常除2跳動
+        #180;           // 讓它一直跑 180 個時間單位
+        
+        reset = 1'b1;   // 再次拉高重置（測試同步重置功能是否正常）
+        #2;             // 維持 2 個時間單位
+        
+        reset = 1'b0;   // 再次釋放重置
+    end
+
+endmodule
