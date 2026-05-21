@@ -1,6 +1,19 @@
 # NTUT Computer Organization — HW5 Verilog
 
-國立臺北科技大學 計算機組織 第五次作業 — Verilog 基礎設計
+<div align="center">
+
+**國立臺北科技大學**  
+**計算機組織HW5 — Verilog 基礎設計**  
+
+---
+
+| 項目 | 內容 |
+|:----:|:----:|
+| 班級 | 電資二 |
+| 學號 | 113820033 |
+| 姓名 | 謝奕宏 |
+
+</div>
 
 ---
 
