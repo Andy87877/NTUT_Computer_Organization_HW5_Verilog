@@ -9,4 +9,3 @@ module FullAdder4bit (S, C4, A, B, Cin);
     // Behavioral addition: concatenate C4 and S
     assign {C4, S} = A + B + Cin;
 endmodule
-

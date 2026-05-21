@@ -24,6 +24,16 @@
 📁 實作位置：[`Lab1_clk_div/clk_div.v`](Lab1_clk_div/clk_div.v)  
 🧪 測試台：[`Lab1_clk_div/clk_div_tb.v`](Lab1_clk_div/clk_div_tb.v)
 
+#### 🖥️ 模擬結果（ModelSim）
+
+| ModelSim 模擬環境 | 波形圖（全覽） |
+|:---:|:---:|
+| ![Lab1 ModelSim](imgs/Lab1/Lab1_1.png) | ![Lab1 Wave Full](imgs/Lab1/Lab1_2.png) |
+
+**波形圖（放大）：** `reset` 高電位期間 `clk_out` 維持 0，放開後每個正緣切換一次，輸出頻率為輸入的一半。
+
+![Lab1 Wave Zoom](imgs/Lab1/Lab1_3.png)
+
 ---
 
 ### Lab 2 — Clock Divide by 3（除三分頻器）
@@ -43,6 +53,18 @@
 📁 實作位置：[`Lab2_ClockBy3/ClockBy3.v`](Lab2_ClockBy3/ClockBy3.v)  
 🧪 測試台：[`Lab2_ClockBy3/clkdiv3_tb.v`](Lab2_ClockBy3/clkdiv3_tb.v)
 
+#### 🖥️ 模擬結果（ModelSim）
+
+| ModelSim 模擬環境 | 波形圖（全覽） |
+|:---:|:---:|
+| ![Lab2 ModelSim](imgs/Lab2/Lab2_1.png) | ![Lab2 Wave](imgs/Lab2/Lab2_2.png) |
+
+**波形標記（紅箭頭標示每個輸出脈衝）：** 可觀察到每 3 個輸入週期 `clk_out` 輸出一次高電位。
+
+| 紅箭頭標記波形 | 波形（放大） |
+|:---:|:---:|
+| ![Lab2 Wave Annotated](imgs/Lab2/Lab2_3.png) | ![Lab2 Wave Zoom](imgs/Lab2/Lab2_4.png) |
+
 ---
 
 ### Homework 1 — 4-bit Full Adder（四位元全加器）
@@ -52,6 +74,7 @@
 使用 Behavioral Modeling 實作 4-bit Full Adder。
 
 **規格說明：**
+
 - **輸入：** 4-bit 被加數 (A)、4-bit 加數 (B)、進位輸入 (Cin)
 - **輸出：** 4-bit 和 (S)、進位輸出 (C4)
 - **實作方法：** 直接利用 Verilog 的加法運算，自動產生進位
@@ -69,6 +92,25 @@
 📁 實作位置：[`HW1_FullAdder4bit/FullAdder4bit.v`](HW1_FullAdder4bit/FullAdder4bit.v)  
 🧪 測試台：[`HW1_FullAdder4bit/FullAdder4bit_tb.v`](HW1_FullAdder4bit/FullAdder4bit_tb.v)
 
+#### 🖥️ 模擬結果（ModelSim）
+
+| ModelSim 模擬環境 | 波形圖（全覽） |
+|:---:|:---:|
+| ![HW1 ModelSim](imgs/Homework1/Homework1_1.png) | ![HW1 Wave Overview](imgs/Homework1/Homework1_2.png) |
+
+**驗證測試案例：**
+
+| 測試案例 | A | B | Cin | S（Sum） | C4（Carry） |
+|---------|---|---|-----|---------|------------|
+| Case 0 | `0000` | `0000` | `0` | `0000` | `0` |
+| Case 1 | `0011` (3) | `0101` (5) | `0` | `1000` (8) | `0` |
+| Case 2 | `1111` (15) | `0001` (1) | `0` | `0000` (0) | `1` |
+| Case 3 | `1010` (10) | `0101` (5) | `1` | `0000` (0) | `1` |
+
+| 詳細波形 | 數值標示波形 |
+|:---:|:---:|
+| ![HW1 Wave Detail](imgs/Homework1/Homework1_3.png) | ![HW1 Wave Values](imgs/Homework1/Homework1_4.png) |
+
 ---
 
 ## 🗂️ 專案結構
@@ -84,10 +126,24 @@ HW5/
 ├── HW1_FullAdder4bit/    # HW1 4-bit Full Adder
 │   ├── FullAdder4bit.v   # 主要設計
 │   └── FullAdder4bit_tb.v # 測試台
-├── imgs/                 # 作業說明截圖
+├── imgs/                 # 作業說明截圖與模擬結果
 │   ├── Lab1.png
+│   ├── Lab1/             # Lab1 模擬截圖
+│   │   ├── Lab1_1.png
+│   │   ├── Lab1_2.png
+│   │   └── Lab1_3.png
 │   ├── Lab2.png
-│   └── Homework1.png
+│   ├── Lab2/             # Lab2 模擬截圖
+│   │   ├── Lab2_1.png
+│   │   ├── Lab2_2.png
+│   │   ├── Lab2_3.png
+│   │   └── Lab2_4.png
+│   ├── Homework1.png
+│   └── Homework1/        # HW1 模擬截圖
+│       ├── Homework1_1.png
+│       ├── Homework1_2.png
+│       ├── Homework1_3.png
+│       └── Homework1_4.png
 └── README.md
 ```
 

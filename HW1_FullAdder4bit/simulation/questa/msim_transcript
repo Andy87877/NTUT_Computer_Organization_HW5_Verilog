@@ -26,29 +26,29 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit {C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit/FullAdder4bit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 08:18:15 on May 21,2026
+# Start time: 08:33:56 on May 21,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit" C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit/FullAdder4bit.v 
 # -- Compiling module FullAdder4bit
 # 
 # Top level modules:
 # 	FullAdder4bit
-# End time: 08:18:15 on May 21,2026, Elapsed time: 0:00:00
+# End time: 08:33:56 on May 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit {C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit/FullAdder4bit_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 08:18:15 on May 21,2026
+# Start time: 08:33:56 on May 21,2026
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit" C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit/FullAdder4bit_tb.v 
 # -- Compiling module FullAdder4bit_tb
 # 
 # Top level modules:
 # 	FullAdder4bit_tb
-# End time: 08:18:15 on May 21,2026, Elapsed time: 0:00:00
+# End time: 08:33:56 on May 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  FullAdder4bit_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" FullAdder4bit_tb 
-# Start time: 08:18:15 on May 21,2026
+# Start time: 08:33:56 on May 21,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading work.FullAdder4bit_tb(fast)
 # Loading work.FullAdder4bit(fast)
@@ -63,5 +63,5 @@
 #    Time: 40 ns  Iteration: 0  Instance: /FullAdder4bit_tb
 # 1
 # Break in Module FullAdder4bit_tb at C:/Users/andy8/Desktop/NTUT_Computer_Organization/HW5/HW1_FullAdder4bit/FullAdder4bit_tb.v line 33
-# End time: 08:27:27 on May 21,2026, Elapsed time: 0:09:12
+# End time: 09:23:41 on May 21,2026, Elapsed time: 0:49:45
 # Errors: 0, Warnings: 0
