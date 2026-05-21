@@ -1,0 +1,12 @@
+|ClockBy3
+clk => pos_count[0].CLK
+clk => pos_count[1].CLK
+clk => neg_count[0].CLK
+clk => neg_count[1].CLK
+reset => pos_count.OUTPUTSELECT
+reset => pos_count.OUTPUTSELECT
+reset => neg_count.OUTPUTSELECT
+reset => neg_count.OUTPUTSELECT
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

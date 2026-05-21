@@ -1,0 +1,29 @@
+module ClockBy3(clk, reset, clk_out);
+    input clk;      // 50MHz clock input
+    input reset;    // Active high reset
+    output clk_out; // 16.66MHz clock output
+    
+    // 2-bit registers for counting 0, 1, 2
+    reg [1:0] pos_count, neg_count;
+    
+    // Output is high when either counter reaches 2
+    assign clk_out = ((pos_count == 2) | (neg_count == 2));
+    
+    // Positive edge counter
+    always @(posedge clk)
+        if (reset)
+            pos_count <= 0; // Reset counter
+        else if (pos_count == 2) 
+            pos_count <= 0; // Reset after reaching 2
+        else 
+            pos_count <= pos_count + 1; // Increment counter
+            
+    // Negative edge counter
+    always @(negedge clk)
+        if (reset)
+            neg_count <= 0; // Reset counter
+        else if (neg_count == 2) 
+            neg_count <= 0; // Reset after reaching 2
+        else 
+            neg_count <= neg_count + 1; // Increment counter
+endmodule
