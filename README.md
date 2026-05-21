@@ -51,11 +51,10 @@
 
 使用 Behavioral Modeling 實作 4-bit Full Adder。
 
-**架構說明：**
-
-- 最低位元（bit 0）使用 **Half Adder**，Carry-in 固定為 0
-- 高位元（bit 1 ~ 3）各使用一個 **Full Adder**，接收前一級的進位輸出
-- 最高位 Full Adder 的 Carry-out 即為整體進位輸出（C₄）
+**規格說明：**
+- **輸入：** 4-bit 被加數 (A)、4-bit 加數 (B)、進位輸入 (Cin)
+- **輸出：** 4-bit 和 (S)、進位輸出 (C4)
+- **實作方法：** 直接利用 Verilog 的加法運算，自動產生進位
 
 | Port | Width | Description |
 |------|-------|-------------|
@@ -63,7 +62,12 @@
 | `B[3:0]` | 4-bit | 加數 |
 | `Cin` | 1-bit | 最低位進位輸入 |
 | `S[3:0]` | 4-bit | 和（Sum） |
-| `Cout` | 1-bit | 最高位進位輸出 |
+| `C4` | 1-bit | 最高位進位輸出 |
+
+**運作原理：** 將進位輸出與 4-bit 和結合成 5-bit 結果 `{C4, S} = A + B + Cin`，實現簡潔高效的加法邏輯。
+
+📁 實作位置：[`HW1_FullAdder4bit/FullAdder4bit.v`](HW1_FullAdder4bit/FullAdder4bit.v)  
+🧪 測試台：[`HW1_FullAdder4bit/FullAdder4bit_tb.v`](HW1_FullAdder4bit/FullAdder4bit_tb.v)
 
 ---
 
@@ -77,6 +81,9 @@ HW5/
 ├── Lab2_ClockBy3/        # Lab2 Divide by 3 Counter
 │   ├── ClockBy3.v        # 主要設計
 │   └── clkdiv3_tb.v      # 測試台
+├── HW1_FullAdder4bit/    # HW1 4-bit Full Adder
+│   ├── FullAdder4bit.v   # 主要設計
+│   └── FullAdder4bit_tb.v # 測試台
 ├── imgs/                 # 作業說明截圖
 │   ├── Lab1.png
 │   ├── Lab2.png
